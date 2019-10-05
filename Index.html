@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI(bootstrap+JavaScript)</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script>
+        function Show(msg) {
+            document.getElementById('LabelResult').innerHTML += msg;
+        }
+
+        function Btn1_Click() {
+            var Height = document.getElementById('height').value;
+            var Weight = document.getElementById('weight').value;
+            // console.log(W);
+            var H = Height / 100;
+            var BMI = Weight / (H * H);
+            Show(BMI);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>BMI:(bootstrap+JavaScript)</h2>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-6">
+                <label>身高:</label>
+                <input class="form-control" type="text" id="height" placeholder="請輸入身高">
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <label>體重:</label>
+                <input class="form-control" type="text" id="weight" placeholder="請輸入體重">
+                <br />
+            </div>
+
+        </div>
+
+
+        <label id="LabelResult">結果:</label>
+        <br />
+        <input class="btn btn-success" type="button" id="Btn-Calculation" value="計算" onclick="Btn1_Click()">
+    </div>
+
+</body>
+
+</html>
